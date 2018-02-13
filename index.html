@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+{% for category in site.data.songs %}
+    {% for artist in category[1] %}
+        {% assign curartist = artist[1] %}
+
+        {% for song in curartist.songs %}
+            <li>
+                {{ song.title }} - {{ curartist.artist }}
+
+                <ul>
+                    <li><a href="http://www.deezer.com/track/{{ song.deezer }}" target="_blank">Deezer</a></li>
+                    <li><a href="https://www.shazam.com/track/{{ song.shazam }}" target="_blank">Shazam</a></li>
+                    {% if song.wikipedia %}
+                    <li><a href="{{ song.wikipedia }}" target="_blank">Wikipedia</a></li>
+                    {% endif %}
+                    {% for youtube in song.youtube %}
+                    <li><a href="https://www.youtube.com/watch?v={{ youtube }}" target="_blank">YouTube</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+
+    {% endfor %}
+{% endfor %}
