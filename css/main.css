@@ -1,0 +1,13 @@
+.ned-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ned-list--inline {
+    display: inline-block;
+}
+
+.ned-list--inline li {
+    display: inline-block;
+}

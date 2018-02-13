@@ -2,15 +2,24 @@
 layout: default
 ---
 
+<ul class="ned-list">
 {% for category in site.data.songs %}
     {% for artist in category[1] %}
         {% assign curartist = artist[1] %}
 
         {% for song in curartist.songs %}
             <li>
-                {{ song.title }} - {{ curartist.artist }}
+                <p>{{ song.title }} - <a href="#artist={{ artist[0] }}">{{ curartist.artist }}</a></p>
 
-                <ul>
+                <!-- Meta -->
+                <b>Meta:</b>
+                <ul class="ned-list ned-list--inline">
+                    <li><a href="#/year/{{ song.year }}/">{{ song.year }}</a></li>
+                </ul>
+
+                <!-- External links -->
+                <b>Links:</b>
+                <ul class="ned-list ned-list--inline">
                     <li><a href="http://www.deezer.com/track/{{ song.deezer }}" target="_blank">Deezer</a></li>
                     <li><a href="https://www.shazam.com/track/{{ song.shazam }}" target="_blank">Shazam</a></li>
                     {% if song.wikipedia %}
@@ -20,8 +29,19 @@ layout: default
                     <li><a href="https://www.youtube.com/watch?v={{ youtube }}" target="_blank">YouTube</a></li>
                     {% endfor %}
                 </ul>
+
+                <!-- Tags -->
+                <b>Tags:</b>
+                <ul class="ned-list ned-list--inline">
+                    {% for tag in song.tags %}
+                    <li><a href="#{{ tag }}">{{ tag }}</a></li>
+                    {% endfor %}
+                </ul>
+
+                <hr>
             </li>
         {% endfor %}
 
     {% endfor %}
 {% endfor %}
+</ul>
