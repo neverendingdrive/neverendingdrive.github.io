@@ -2,6 +2,7 @@ artist: New Kids on the Block
 wikipedia: https://en.wikipedia.org/wiki/New_Kids_on_the_Block
 songs:
   - title: Tonight
+    lang: en
     year: 1990
     deezer: 1065851
     shazam: 45736023

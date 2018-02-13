@@ -1,3 +1,16 @@
+body {
+    color: #222;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+a {
+    border-bottom: 1px dotted #777;
+    color: #777;
+    text-decoration: none;
+}
+
 .ned-list {
     list-style-type: none;
     padding: 0;
@@ -10,4 +23,14 @@
 
 .ned-list--inline li {
     display: inline-block;
+}
+
+#player {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.wrapper {
+    padding: 2rem;
 }
