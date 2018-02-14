@@ -6,9 +6,13 @@ body {
 }
 
 a {
-    border-bottom: 1px dotted #777;
+    /* border-bottom: 1px dotted #777; */
     color: #777;
     text-decoration: none;
+}
+
+h3 {
+    margin: 0;
 }
 
 .ned-list {
@@ -25,12 +29,67 @@ a {
     display: inline-block;
 }
 
-#player {
+.player-wrapper {
     position: fixed;
     top: 0;
     right: 0;
+    bottom: 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    /* opacity: 0.25; */
+    filter: opacity(15%);
+}
+
+#player {
+    /* filter: grayscale(1) invert(1); */
 }
 
 .wrapper {
-    padding: 2rem;
+    padding: 2rem 300px 2rem 2rem;
+}
+
+.ned-button--youtube {
+    background: url("/img/youtube.svg");
+    width: 2rem;
+    height: 2rem;
+    border: none;
+}
+
+.ned-date::before {
+    content: url("/img/icons/ic_date_range_black_24px.svg");
+}
+
+.ned-list--links::before {
+    content: url("/img/icons/ic_link_black_24px.svg");
+}
+
+.ned-link--tir {
+    width: 2rem;
+    height: 2rem;
+    overflow: hidden;
+    font-size: 1px;
+    color: white;
+}
+
+.ned-link--deezer {
+    content: url("/img/icons/brands/deezer.svg");
+}
+
+.ned-link--shazam {
+    content: url("/img/icons/brands/shazam.svg");
+}
+
+.ned-link--wikipedia {
+    content: url("/img/icons/brands/wikipedia.svg");
+}
+
+.ned-link--youtube {
+    content: url("/img/icons/brands/youtube.svg");
+}
+
+.ned-song {
+    border-bottom: 1px solid #eee;
+    padding: 1rem;
 }
