@@ -13,9 +13,8 @@ layout: default
 
                 <!-- Play -->
                 <b>Play:</b>
-                {% for youtube in song.youtube %}
-                <button onclick="loadVideo('{{ youtube }}');">YouTube</button>
-                {% endfor %}
+                <!-- <button onclick="DZ.player.playTracks([{{ song.deezer }}]);">Play</button> -->
+                <button onclick="test({{ song.deezer }});">Play</button>
 
                 <!-- Meta -->
                 <b>Meta:</b>
@@ -52,37 +51,48 @@ layout: default
 {% endfor %}
 </ul>
 
-<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-<div id="player"></div>
-
+<!-- <div id="dz-root"></div>
+<div id="player" style="width:100%;" align="center"></div>
 <script>
-    // 2. This code loads the IFrame Player API code asynchronously.
-    var tag = document.createElement('script');
 
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    function onPlayerLoaded() {
+    }
 
-    // 3. This function creates an <iframe> (and YouTube player)
-    //    after the API code downloads.
-    var player;
-    function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        height: '195',
-        width: '320',
-        // videoId: 'M7lc1UVf-VE',
-        events: {
-        'onReady': onPlayerReady
-        }
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("loaded");
+        DZ.init({
+            appId  : '270922',
+            channelUrl : 'http://127.0.0.1:4000/channel.html',
+            player : {
+                container : 'player',
+                playlist : true,
+                width : 650,
+                height : 300,
+                onload : onPlayerLoaded
+            }
+        });
     });
-    }
+</script> -->
 
-    // 4. The API will call this function when the video player is ready.
-    function onPlayerReady(event) {
-        event.target.playVideo();
-    }
+<!-- <script>
+        (function(d, s, id) { 
+        var js, djs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return; 
+        js = d.createElement(s); js.id = id; 
+        js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js"; 
+         djs.parentNode.insertBefore(js, djs);
+    }(document, "script", "deezer-widget-loader"));</script>
+    
+    <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=3135556" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="700" data-height="350"></div>
+ -->
 
-    function loadVideo(videoID) {
-        if(player) { player.loadVideoById(videoID); }
-    }
-</script>
+ <iframe id="player" scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=false&width=700&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=3135556" width="700" height="350"></iframe>
+
+ <script>
+     function test(trackid) {
+         let player = document.getElementById("player");
+         console.log(player);
+         player.src = `https://www.deezer.com/plugins/player?format=classic&autoplay=true&playlist=false&width=700&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=${trackid}`;
+     }
+ 
+ </script>
