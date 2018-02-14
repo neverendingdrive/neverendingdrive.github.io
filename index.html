@@ -2,35 +2,74 @@
 layout: default 
 ---
 
+<div class="player-wrapper">
+    <header>
+        <h1 class="ned-site__title">NeverEnding<br>Drive</h1>
+    </header>
+
+    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <div id="player"></div>
+</div>
+
 <ul class="ned-list">
-    {% for category in site.data.songs %} {% for artist in category[1] %} {% assign curartist = artist[1] %} {% for song in curartist.songs
-    %}
+    {% for category in site.data.songs %} 
+    {% for artist in category[1] %} 
+    {% assign curartist = artist[1] %} 
+    {% for song in curartist.songs %}
     <li class="ned-song">
-        <header class="ned-song__header">
+
+        <!-- Play buttons -->
+        <div class="ned-song__play-buttons">
+            {% for youtube in song.links.youtube %}
+            <button class="ned-song__play-item ned-button--youtube" onclick="loadVideo('{{ youtube }}');"></button>
+            {% endfor %}
+        </div>
+
+        <!-- Play links -->
+        <div class="ned-song__play-links">
+            {% for youtube in song.links.youtube %}
+            <a class="ned-song__play-item ned-link--tir ned-link--youtube" href="https://www.youtube.com/watch?v={{ youtube }}" target="_blank">YouTube</a>
+            {% endfor %}
+        </div>
+
+        <div class="ned-song__title">
+            <h3>{{ song.title }}</h3>
+        </div>
+
+        <div class="ned-song__subtitle">
+            <a href="#artist={{ artist[0] }}">{{ curartist.artist }}</a>
+        </div>
+
+        <div class="ned-song__links">
+            <a  href="http://www.deezer.com/track/{{ song.links.deezer }}" target="_blank">
+                <img class="ned-song__link-icon" src="/img/icons/brands/deezer.svg" alt="Deezer" />
+            </a>
+            <a  href="https://www.shazam.com/track/{{ song.links.shazam }}" target="_blank">
+                <img class="ned-song__link-icon" src="/img/icons/brands/shazam.svg" alt="Shazam" />
+            </a>
+            {% if song.links.wikipedia %}
+            <a  href="{{ song.links.wikipedia }}" target="_blank">
+                <img class="ned-song__link-icon" src="/img/icons/brands/wikipedia.svg" alt="Wikipedia" />
+            </a>
+            {% endif %}
+        </div>
+
+        <!-- <header class="ned-song__header">
             <h3>
                 {{ song.title }} - <a href="#artist={{ artist[0] }}">{{ curartist.artist }}</a>
                 <span class="ned-badge">{{ song.fav }}</span>
             </h3>
-        </header>
-        
-        <!-- Play -->
-        <div class="ned-song__play">
-            {% for youtube in song.links.youtube %}
-            <button class="ned-button--youtube" onclick="loadVideo('{{ youtube }}');"></button>
-            {% endfor %}
-        </div>
+        </header> -->
 
         <!-- External links -->
-        <ul class="ned-song__links ned-list ned-list--inline">
-            {% for youtube in song.links.youtube %}
-            <li><a class="ned-link--tir ned-link--youtube" href="https://www.youtube.com/watch?v={{ youtube }}" target="_blank">YouTube</a></li>
-            {% endfor %}
+        <!-- <ul class="ned-song__links ned-list ned-list--inline">
+
             <li><a class="ned-link--tir ned-link--deezer" href="http://www.deezer.com/track/{{ song.links.deezer }}" target="_blank">Deezer</a></li>
             <li><a class="ned-link--tir ned-link--shazam" href="https://www.shazam.com/track/{{ song.links.shazam }}" target="_blank">Shazam</a></li>
             {% if song.links.wikipedia %}
             <li><a class="ned-link--tir ned-link--wikipedia" href="{{ song.links.wikipedia }}" target="_blank">Wikipedia</a></li>
             {% endif %}
-        </ul>
+        </ul> -->
 
         <!-- Meta & Tags -->
         <div class="ned-song__meta">
@@ -49,10 +88,7 @@ layout: default
     {% endfor %} {% endfor %} {% endfor %}
 </ul>
 
-<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-<div class="player-wrapper">
-    <div id="player"></div>
-</div>
+
 
 <script>
     // 2. This code loads the IFrame Player API code asynchronously.
