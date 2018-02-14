@@ -20,15 +20,20 @@ layout: default
 
         <!-- Play buttons -->
         <div class="ned-song__play-buttons">
-            {% for youtube in song.links.youtube %}
-            <button class="ned-song__play-item ned-button--youtube" onclick="loadVideo('{{ youtube }}');"></button>
-            {% endfor %}
+            <button class="ned-song__play-button" onclick="loadVideo('{{ song.links.youtube[0] }}');">
+                <img class="ned-song__link-icon" src="/img/icons/brands/youtube-play-red.svg" alt="YouTube" />
+            </button>
+            <button class="ned-song__play-button" onclick="loadVideo('{{ song.links.youtube[1] }}');">
+                <img class="ned-song__link-icon" src="/img/icons/brands/youtube-play.svg" alt="YouTube" />
+            </button>
         </div>
 
         <!-- Play links -->
         <div class="ned-song__play-links">
             {% for youtube in song.links.youtube %}
-            <a class="ned-song__play-item ned-link--tir ned-link--youtube" href="https://www.youtube.com/watch?v={{ youtube }}" target="_blank">YouTube</a>
+            <a href="https://www.youtube.com/watch?v={{ youtube }}" target="_blank">
+                <img class="ned-song__link-icon" src="/img/icons/brands/youtube.svg" alt="YouTube" />
+            </a>
             {% endfor %}
         </div>
 
@@ -60,16 +65,6 @@ layout: default
                 <span class="ned-badge">{{ song.fav }}</span>
             </h3>
         </header> -->
-
-        <!-- External links -->
-        <!-- <ul class="ned-song__links ned-list ned-list--inline">
-
-            <li><a class="ned-link--tir ned-link--deezer" href="http://www.deezer.com/track/{{ song.links.deezer }}" target="_blank">Deezer</a></li>
-            <li><a class="ned-link--tir ned-link--shazam" href="https://www.shazam.com/track/{{ song.links.shazam }}" target="_blank">Shazam</a></li>
-            {% if song.links.wikipedia %}
-            <li><a class="ned-link--tir ned-link--wikipedia" href="{{ song.links.wikipedia }}" target="_blank">Wikipedia</a></li>
-            {% endif %}
-        </ul> -->
 
         <!-- Meta & Tags -->
         <div class="ned-song__meta">
