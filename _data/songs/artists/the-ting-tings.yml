@@ -4,9 +4,11 @@ songs:
   - title: That's Not My Name
     lang: en
     year: 2007
-    deezer: 901069
-    shazam: 45069118
-    wikipedia: https://en.wikipedia.org/wiki/That%27s_Not_My_Name
-    youtube: [v1c2OfAzDTI, 1EQ88HXIqqU]
-    tags: [2, fast, fly, madness]
+    fav: 2
+    tags: [fast, fly, madness]
+    links:
+      deezer: 901069
+      shazam: 45069118
+      wikipedia: https://en.wikipedia.org/wiki/That%27s_Not_My_Name
+      youtube: [v1c2OfAzDTI, 1EQ88HXIqqU]
   

@@ -6,50 +6,44 @@ layout: default
     {% for category in site.data.songs %} {% for artist in category[1] %} {% assign curartist = artist[1] %} {% for song in curartist.songs
     %}
     <li class="ned-song">
-        <h3>{{ song.title }} -
-            <a href="#artist={{ artist[0] }}">{{ curartist.artist }}</a>
-        </h3>
-
+        <header class="ned-song__header">
+            <h3>
+                {{ song.title }} - <a href="#artist={{ artist[0] }}">{{ curartist.artist }}</a>
+                <span class="ned-badge">{{ song.fav }}</span>
+            </h3>
+        </header>
+        
         <!-- Play -->
-        {% for youtube in song.youtube %}
-        <!-- <button onclick="loadVideo('{{ youtube }}');">YouTube</button> -->
-        <button class="ned-button--youtube" onclick="loadVideo('{{ youtube }}');"></button>
-        {% endfor %}
-
-        <!-- Meta -->
-        <span class="ned-date">
-            <a href="#/year/{{ song.year }}/"><time>{{ song.year }}</time></a>
-        </span>
-        <!-- <ul class="ned-list ned-list--inline">
-            <li>
-                <a href="#/year/{{ song.year }}/">{{ song.year }}</a>
-            </li>
-        </ul> -->
+        <div class="ned-song__play">
+            {% for youtube in song.links.youtube %}
+            <button class="ned-button--youtube" onclick="loadVideo('{{ youtube }}');"></button>
+            {% endfor %}
+        </div>
 
         <!-- External links -->
-        <ul class="ned-list ned-list--inline ned-list--links">
-            <li><a class="ned-link--tir ned-link--deezer" href="http://www.deezer.com/track/{{ song.deezer }}" target="_blank">Deezer</a></li>
-            <li><a class="ned-link--tir ned-link--shazam" href="https://www.shazam.com/track/{{ song.shazam }}" target="_blank">Shazam</a></li>
-            {% if song.wikipedia %}
-            <li><a class="ned-link--tir ned-link--wikipedia" href="{{ song.wikipedia }}" target="_blank">Wikipedia</a></li>
-            {% endif %} {% for youtube in song.youtube %}
+        <ul class="ned-song__links ned-list ned-list--inline">
+            {% for youtube in song.links.youtube %}
             <li><a class="ned-link--tir ned-link--youtube" href="https://www.youtube.com/watch?v={{ youtube }}" target="_blank">YouTube</a></li>
-<!-- 
-            <li>
-                <a href="https://www.youtube.com/watch?v={{ youtube }}" target="_blank">YouTube</a>
-            </li> -->
             {% endfor %}
+            <li><a class="ned-link--tir ned-link--deezer" href="http://www.deezer.com/track/{{ song.links.deezer }}" target="_blank">Deezer</a></li>
+            <li><a class="ned-link--tir ned-link--shazam" href="https://www.shazam.com/track/{{ song.links.shazam }}" target="_blank">Shazam</a></li>
+            {% if song.links.wikipedia %}
+            <li><a class="ned-link--tir ned-link--wikipedia" href="{{ song.links.wikipedia }}" target="_blank">Wikipedia</a></li>
+            {% endif %}
         </ul>
 
-        <!-- Tags -->
-        <b>Tags:</b>
-        <ul class="ned-list ned-list--inline">
-            {% for tag in song.tags %}
-            <li>
-                <a href="#{{ tag }}">{{ tag }}</a>
-            </li>
-            {% endfor %}
-        </ul>
+        <!-- Meta & Tags -->
+        <div class="ned-song__meta">
+            <span>
+                <a href="#/year/{{ song.year }}/"><time>{{ song.year }}</time></a>
+            </span>
+            
+            <ul class="ned-list ned-list--inline">
+                {% for tag in song.tags %}
+                <li><a href="#{{ tag }}">#{{ tag }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
 
     </li>
     {% endfor %} {% endfor %} {% endfor %}

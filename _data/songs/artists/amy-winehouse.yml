@@ -4,8 +4,10 @@ songs:
   - title: Back To Black
     lang: en
     year: 2007
-    deezer: 2176856
-    shazam: 44595270
-    wikipedia: https://en.wikipedia.org/wiki/Back_to_Black_(song)
-    youtube: [TJAfLE39ZZ8, 4IOXgamaOLI, 0_25S5BgTlg]
-    tags: [2, sadness]
+    fav: 2
+    tags: [sadness]
+    links:
+      deezer: 2176856
+      shazam: 44595270
+      wikipedia: https://en.wikipedia.org/wiki/Back_to_Black_(song)
+      youtube: [TJAfLE39ZZ8, 4IOXgamaOLI, 0_25S5BgTlg]

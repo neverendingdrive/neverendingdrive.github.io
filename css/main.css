@@ -52,25 +52,32 @@ h3 {
 
 .ned-button--youtube {
     background: url("/img/youtube.svg");
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border: none;
+    margin-right: 1rem;
 }
 
-.ned-date::before {
+/* .ned-date::before {
     content: url("/img/icons/ic_date_range_black_24px.svg");
-}
+} */
 
-.ned-list--links::before {
+/* .ned-list--links::before {
     content: url("/img/icons/ic_link_black_24px.svg");
-}
+} */
 
 .ned-link--tir {
+    /* background: #000; */
+    /* border-radius: 4px; */
+    /* color: rgba(255, 255, 255, 0.9); */
+    /* padding: 0.25rem 0.5rem; */
     width: 2rem;
     height: 2rem;
+    /* font-size: 0.75rem; */
     overflow: hidden;
     font-size: 1px;
     color: white;
+    margin-right: 0.25rem;
 }
 
 .ned-link--deezer {
@@ -92,4 +99,47 @@ h3 {
 .ned-song {
     border-bottom: 1px solid #eee;
     padding: 1rem;
+
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "play links"
+      "meta links";
+  
+}
+
+.ned-song__header {
+    grid-area: header;
+    /* background: #e0e0e0; */
+}
+
+.ned-song__play {
+    grid-area: play;
+    /* background: #e5e5e5; */
+}
+
+.ned-song__links {
+    grid-area: links;
+    align-self: center;
+    justify-self: right;
+    /* background: #efefef; */
+}
+
+.ned-song__meta {
+    grid-area: meta;
+    /* background: #f5f5f5; */
+}
+
+.ned-badge {
+    background: lightgreen;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    padding: .25rem .5rem;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
 }
