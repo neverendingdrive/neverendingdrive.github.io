@@ -2,11 +2,10 @@ artist: Chromatics
 wikipedia: https://en.wikipedia.org/wiki/Chromatics_(band)
 songs:
   - title: Shadow
-    lang: en
+    lang: [en]
     year: 2017
     fav: 2
     tags: []
     links:
       deezer: 401788502
-      shazam: 285199880
       youtube: [IGUboLZx3Tk, pGVh2eG06qU]

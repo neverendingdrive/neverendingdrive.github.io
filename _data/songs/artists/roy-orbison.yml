@@ -2,13 +2,12 @@ artist: Roy Orbison
 wikipedia: https://en.wikipedia.org/wiki/Roy_Orbison
 songs:
   - title: I Drove All Night
-    lang: en
+    lang: [en]
     year: 1992
     fav: 3
     tags: [love]
     links:
       deezer: 134945648
-      shazam: 281511
       wikipedia: https://en.wikipedia.org/wiki/I_Drove_All_Night
       youtube: [m5N9IHqqGcA, i8ZVFngqvzA]
   

@@ -1,64 +1,70 @@
 --- 
-layout: default 
+layout: default
 ---
 
 
-
-<ul class="ned-list">
-    {% for category in site.data.songs %} 
+{% assign song_counter = 0 %}
+<ul class="song-list">
+{% for category in site.data.songs %} 
     {% for artist in category[1] %} 
-    {% assign curartist = artist[1] %} 
-    {% for song in curartist.songs %}
+        {% assign curartist = artist[1] %} 
+        {% for song in curartist.songs %}
 
+        <li class="song" data-artist="{{ artist[0] }}" data-fav="{{ song.fav }}" data-lang="{{ song.lang | join: ', ' }}" data-year="{{ song.year }}">
+        
+            <!-- Play button -->
+            <div class="song__play">
+                <button class="song__play-button" onclick="loadVideo('{{ song.links.youtube[0] }}');"></button>
+            </div>
+        
+            <!-- Header -->
+            <div class="song__header">
+                <h3>{{ song.title }} <a href="#artist={{ artist[0] }}">{{ curartist.artist }}</a>
+                </h3>
+            </div>
+        
+            <!-- Links -->
+            <div class="song__links">
+                <!-- YouTube links -->
+                {% for youtube in song.links.youtube %}
+                <a class="song__link song__link--youtube" href="https://www.youtube.com/watch?v={{ youtube }}" target="_blank">YouTube</a>
+                {% endfor %}
 
-    <li class="song">
-    
-        <!-- Play button -->
-        <div class="song__play">
-            <button class="song__play-button" onclick="loadVideo('{{ song.links.youtube[0] }}');"></button>
-        </div>
-    
-        <!-- Header -->
-        <div class="song__header">
-            <h3>{{ song.title }} <a href="#artist={{ artist[0] }}">{{ curartist.artist }}</a>
-            </h3>
-        </div>
-    
-        <!-- Links -->
-        <div class="song__links">
-            <!-- YouTube links -->
-            {% for youtube in song.links.youtube %}
-            <a class="song__link song__link--youtube" href="https://www.youtube.com/watch?v={{ youtube }}" target="_blank">YouTube</a>
-            {% endfor %}
+                <!-- Deezer link -->
+                <a class="song__link song__link--deezer" href="http://www.deezer.com/track/{{ song.links.deezer }}" target="_blank">Deezer</a>
+                
+                <!-- Wikipedia link -->
+                {% if song.links.wikipedia %}
+                <a class="song__link song__link--wikipedia" href="{{ song.links.wikipedia }}" target="_blank">Wikipedia</a>
+                {% endif %}
 
-            <!-- Deezer link -->
-            <a class="song__link song__link--deezer" href="http://www.deezer.com/track/{{ song.links.deezer }}" target="_blank">Deezer</a>
-            
-            <!-- Wikipedia link -->
-            {% if song.links.wikipedia %}
-            <a class="song__link song__link--wikipedia" href="song.links.wikipedia" target="_blank">Wikipedia</a>
-            <!-- <a href="{{ song.links.wikipedia }}" target="_blank">
-                <img class="ned-song__link-icon" src="/img/icons/brands/wikipedia.svg" alt="Wikipedia" />
-            </a> -->
-            {% endif %}
-            <!-- <a href="https://www.shazam.com/track/{{ song.links.shazam }}" target="_blank">
-                <img class="ned-song__link-icon" src="/img/icons/brands/shazam.svg" alt="Shazam" />
-            </a> -->
-        </div>
-    
-        <!-- Meta -->
-        <div class="song__meta">
-            <a href="#/year/{{ song.year }}/"><time>{{ song.year }}</time></a>
-            <a class="badge" href="#/fav/{{ song.fav }}/">{{ song.fav }}</a>
-        </div>
-    </li>
-    {% endfor %} {% endfor %} {% endfor %}
+                <!-- Google Search link -->
+                <a class="song__link song__link--google" href="https://www.google.com/search?q={{ song.title }} {{ curartist.artist }}" target="_blank">Google</a>
+            </div>
+        
+            <!-- Meta -->
+            <div class="song__meta">
+                <a href="#/year/{{ song.year }}/"><time>{{ song.year }}</time></a>
+                <a class="badge" href="#/fav/{{ song.fav }}/">{{ song.fav }}</a>
+            </div>
+        </li>
+        {% assign song_counter = song_counter | plus:1 %}
+
+        {% endfor %} 
+    {% endfor %} 
+{% endfor %}
 </ul>
 
-<div class="player-wrapper">
+<!-- Page Footer -->
+<footer class="page-footer">
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div id="player"></div>
-</div>
+
+    <!-- Song counter -->
+    <p>{{ song_counter }} songs so far</p>
+</footer>
+
+
 
 
 <script>
@@ -75,14 +81,11 @@ layout: default
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
             height: '200',
-            width: '200',
+            width: '356',
             playerVars: {
-                // controls: 0,
                 iv_load_policy: 3,
-                // modestbranding: 1,
                 rel: 0,
-                showinfo: 0,
-                theme: "light"
+                showinfo: 0
             },
             // videoId: 'M7lc1UVf-VE',
             events: {

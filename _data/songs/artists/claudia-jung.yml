@@ -2,11 +2,10 @@ artist: Claudia Jung
 wikipedia: https://en.wikipedia.org/wiki/Claudia_Jung
 songs:
   - title: Amore Amore
-    lang: de
+    lang: [de]
     year: 1987
     fav: 3
     tags: [schlager]
     links:
       deezer: 16712932
-      shazam: 20085775
       youtube: [Cv6WHF9DPhk, _Hb5pV4FXLM]

@@ -1,0 +1,12 @@
+artist: ABBA
+wikipedia: https://en.wikipedia.org/wiki/ABBA
+songs:
+  - title: The Day Before You Came 
+    lang: [en]
+    year: 1982
+    fav: 2
+    tags: []
+    links:
+      deezer: 76376892
+      wikipedia: https://en.wikipedia.org/wiki/The_Day_Before_You_Came
+      youtube: [GroJ-OiV-EU, 1HnOFwqpLRQ]

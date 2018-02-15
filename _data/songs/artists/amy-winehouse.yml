@@ -2,12 +2,11 @@ artist: Amy Winehouse
 wikipedia: https://en.wikipedia.org/wiki/Amy_Winehouse
 songs:
   - title: Back To Black
-    lang: en
+    lang: [en]
     year: 2007
     fav: 2
     tags: [sadness]
     links:
       deezer: 2176856
-      shazam: 44595270
       wikipedia: https://en.wikipedia.org/wiki/Back_to_Black_(song)
       youtube: [TJAfLE39ZZ8, 4IOXgamaOLI]

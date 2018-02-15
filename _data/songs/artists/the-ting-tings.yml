@@ -2,13 +2,12 @@ artist: The Ting Tings
 wikipedia: https://en.wikipedia.org/wiki/The_Ting_Tings
 songs:
   - title: That's Not My Name
-    lang: en
+    lang: [en]
     year: 2007
     fav: 2
     tags: [fast, fly, madness]
     links:
       deezer: 901069
-      shazam: 45069118
       wikipedia: https://en.wikipedia.org/wiki/That%27s_Not_My_Name
       youtube: [v1c2OfAzDTI, 1EQ88HXIqqU]
   

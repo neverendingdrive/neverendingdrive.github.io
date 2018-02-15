@@ -2,12 +2,11 @@ artist: New Kids on the Block
 wikipedia: https://en.wikipedia.org/wiki/New_Kids_on_the_Block
 songs:
   - title: Tonight
-    lang: en
+    lang: [en]
     year: 1990
-    fav: 3
+    fav: 4
     tags: [fast]
     links:
       deezer: 1065851
-      shazam: 45736023
       wikipedia: https://en.wikipedia.org/wiki/Tonight_(New_Kids_on_the_Block_song)
       youtube: [JTo3N73hpPg, 9Wz4Ltg1gxo]

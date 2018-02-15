@@ -15,6 +15,11 @@ h3 {
     margin: 0;
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
 
 /* ==========================================================================
    Site Wrapper
@@ -38,6 +43,10 @@ h3 {
    Songs
    ========================================================================== */
 
+.song-list {
+    margin-bottom: 2.5rem;
+}
+
 .song {
     display: grid;
     grid-template-areas:
@@ -46,10 +55,6 @@ h3 {
     grid-template-columns: max-content 1fr max-content;
     padding: 2.5rem 0;
 }
-
-/* .song:nth-child(2n+1) {
-    background: #f5f5f5;
-} */
 
 .song__play {
     align-self: center;
@@ -92,6 +97,10 @@ h3 {
 }
 
 .song__link::before {
+    content: "";
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1rem;
     display: inline-block;
     height: 1rem;
     margin-right: 0.25rem;
@@ -99,21 +108,21 @@ h3 {
 }
 
 .song__link--youtube::before {
-    content: url("/img/icons/brands/youtube-play.svg");
+    background-image: url("/img/icons/brands/youtube.svg");
+    background-size: 0.75rem;
 }
 
 .song__link--deezer::before {
-    content: url("/img/icons/brands/deezer.svg");
+    background-image: url("/img/icons/brands/deezer.svg");
 }
 
 .song__link--wikipedia::before {
-    content: url("/img/icons/brands/wikipedia.svg");
+    background-image: url("/img/icons/brands/wikipedia.svg");
 }
 
-.ned-song__link-icon {
-    margin: 0 0.5rem;
-    height: 2rem;
-    width: 2rem;
+.song__link--google::before {
+    background-image: url("/img/icons/brands/google.svg");
+    background-size: 0.75rem;
 }
 
 .song__meta {
@@ -122,8 +131,18 @@ h3 {
     justify-self: center;
 }
 
+/* ==========================================================================
+   Page Footer
+   ========================================================================== */
 
+.page-footer {
+    padding: 1rem;
+    text-align: center;
+}
 
+#player {
+    margin-bottom: 2.5rem;
+}
 
 /* ==========================================================================
    
@@ -142,72 +161,6 @@ h3 {
     vertical-align: baseline;
     white-space: nowrap;
 }
-
-
-
-.ned-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.ned-list--inline {
-    display: inline-block;
-}
-
-.ned-list--inline li {
-    display: inline-block;
-}
-
-.player-wrapper {
-    width: 240px;
-    /* position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0; */
-    background: #000;
-    /* display: flex; */
-    /* align-items: center; */
-    padding: 1rem;
-    text-align: center;
-    /* opacity: 0.25; */
-    /* filter: opacity(15%); */
-}
-
-#player {
-    /* filter: grayscale(1) invert(1); */
-}
-
-
-
-
-
-/* .ned-date::before {
-    content: url("/img/icons/ic_date_range_black_24px.svg");
-} */
-
-/* .ned-list--links::before {
-    content: url("/img/icons/ic_link_black_24px.svg");
-} */
-
-
-
-.ned-song__link-icon {
-    margin: 0 0.5rem;
-    height: 2rem;
-    width: 2rem;
-}
-
-
-
-
-
-
-.ned-song__play-links {
-    grid-area: playlinks;
-    /* background: #efefef; */
-}
-
 
 
 
