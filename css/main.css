@@ -15,6 +15,136 @@ h3 {
     margin: 0;
 }
 
+
+/* ==========================================================================
+   Site Wrapper
+   ========================================================================== */
+
+.site-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Site Header
+   ========================================================================== */
+
+.site-header__title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Songs
+   ========================================================================== */
+
+.song {
+    display: grid;
+    grid-template-areas:
+        "play header meta"
+        "play links meta";  
+    grid-template-columns: max-content 1fr max-content;
+    padding: 2.5rem 0;
+}
+
+/* .song:nth-child(2n+1) {
+    background: #f5f5f5;
+} */
+
+.song__play {
+    align-self: center;
+    grid-area: play;
+    margin-right: 2rem;
+}
+
+.song__play-button {
+    background: url("/img/icons/brands/youtube-play.svg");
+    border: none;
+    cursor: pointer;
+    display: block;
+    height: 2.5rem;
+    padding: 0;
+    width: 2.5rem;
+}
+
+.song__play-button:focus {
+    outline: black dashed 1px;
+    outline-offset: 0.25rem;
+}
+
+.song__header {
+    grid-area: header;
+    /* align-self: end; */
+}
+
+.song__links {
+    grid-area: links;
+    margin-top: 0.5rem;
+    /* justify-self: end; */
+}
+
+.song__link {
+    align-items: center;
+    border-bottom: 1px dotted #ddd;
+    display: inline-flex;
+    font-size: 0.75rem;
+    margin-right: 1rem;
+}
+
+.song__link::before {
+    display: inline-block;
+    height: 1rem;
+    margin-right: 0.25rem;
+    width: 1rem;
+}
+
+.song__link--youtube::before {
+    content: url("/img/icons/brands/youtube-play.svg");
+}
+
+.song__link--deezer::before {
+    content: url("/img/icons/brands/deezer.svg");
+}
+
+.song__link--wikipedia::before {
+    content: url("/img/icons/brands/wikipedia.svg");
+}
+
+.ned-song__link-icon {
+    margin: 0 0.5rem;
+    height: 2rem;
+    width: 2rem;
+}
+
+.song__meta {
+    align-self: center;
+    grid-area: meta;
+    justify-self: center;
+}
+
+
+
+
+/* ==========================================================================
+   
+   ========================================================================== */
+
+.badge {
+    background: lightgray;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    padding: .25rem .5rem;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+
+
 .ned-list {
     list-style-type: none;
     padding: 0;
@@ -31,10 +161,10 @@ h3 {
 
 .player-wrapper {
     width: 240px;
-    position: fixed;
+    /* position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
+    bottom: 0; */
     background: #000;
     /* display: flex; */
     /* align-items: center; */
@@ -48,9 +178,7 @@ h3 {
     /* filter: grayscale(1) invert(1); */
 }
 
-.wrapper {
-    padding: 2rem 2rem 2rem 300px;
-}
+
 
 
 
@@ -62,13 +190,7 @@ h3 {
     content: url("/img/icons/ic_link_black_24px.svg");
 } */
 
-.ned-song__play-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    outline-color: red;
-    padding: 0;
-}
+
 
 .ned-song__link-icon {
     margin: 0 0.5rem;
@@ -76,74 +198,21 @@ h3 {
     width: 2rem;
 }
 
-.ned-song {
-    border-bottom: 1px solid #eee;
-    padding: 1rem;
 
-    display: grid;
-    /* grid-template-areas:
-      "header header"
-      "play links"
-      "meta links"; */
-      grid-template-columns: max-content 1fr max-content;
-    grid-template-areas:
-      "playbuttons title links"
-      "playlinks subtitle meta";
-  
-}
 
-.ned-song__header {
-    grid-area: header;
-}
 
-.ned-song__play-buttons {
-    grid-area: playbuttons;
-    margin-right: 1rem;
-    /* background: #e5e5e5; */
-}
+
 
 .ned-song__play-links {
     grid-area: playlinks;
     /* background: #efefef; */
 }
 
-.ned-song__title {
-    grid-area: title;
-    /* background: #e0e0e0; */
-    align-self: end;
-}
 
-.ned-song__subtitle {
-    grid-area: subtitle;
-    /* background: #d5d5d5; */
-    align-self: start;
-}
 
-.ned-song__links {
-    grid-area: links;
-    justify-self: end;
-}
 
-.ned-song__meta {
-    grid-area: meta;
-    justify-self: end;
-}
 
-.ned-badge {
-    background: lightgreen;
-    border-radius: 50%;
-    color: #fff;
-    display: inline-block;
-    font-size: 75%;
-    font-weight: 700;
-    line-height: 1;
-    padding: .25rem .5rem;
-    text-align: center;
-    vertical-align: baseline;
-    white-space: nowrap;
-}
 
-.ned-site__title {
-    color: #fff;
-    font-size: 2rem;
-}
+
+
+
