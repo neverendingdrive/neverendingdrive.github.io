@@ -1,0 +1,23 @@
+artist: Orchestral Manoeuvres in the Dark
+wikipedia: https://en.wikipedia.org/wiki/Orchestral_Manoeuvres_in_the_Dark
+songs:
+  - title: Maid of Orleans
+    lang: [en]
+    year: 1981
+    fav: 2
+    tags: []
+    links:
+      deezer: 3156225
+      wikipedia: https://en.wikipedia.org/wiki/Maid_of_Orleans_(The_Waltz_Joan_of_Arc)
+      youtube: [vmwMhjbThKg, xy-Q8LZcaiA]
+
+  - title: Pandora's Box
+    lang: [en]
+    year: 1991
+    fav: 3
+    tags: []
+    links:
+      deezer: 3157030
+      wikipedia: https://en.wikipedia.org/wiki/Pandora%27s_Box_(Orchestral_Manoeuvres_in_the_Dark_song)
+      youtube: [J4tjcyQqHFQ, PMFKib_Byb8]
+  

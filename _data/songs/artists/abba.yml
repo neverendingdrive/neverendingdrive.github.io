@@ -3,10 +3,20 @@ wikipedia: https://en.wikipedia.org/wiki/ABBA
 songs:
   - title: The Day Before You Came 
     lang: [en]
-    year: 1982
+    year: 1981
     fav: 2
     tags: []
     links:
       deezer: 76376892
       wikipedia: https://en.wikipedia.org/wiki/The_Day_Before_You_Came
       youtube: [GroJ-OiV-EU, 1HnOFwqpLRQ]
+
+  - title: Dancing Queen
+    lang: [en]
+    year: 1976
+    fav: 3
+    tags: []
+    links:
+      deezer: 884025
+      wikipedia: https://en.wikipedia.org/wiki/Dancing_Queen
+      youtube: [xFrGuyw1V8s, qk_Vu6AcbWg]
