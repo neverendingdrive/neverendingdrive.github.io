@@ -1,6 +1,16 @@
 artist: ABBA
 wikipedia: https://en.wikipedia.org/wiki/ABBA
 songs:
+  - title: Dancing Queen
+    lang: [en]
+    year: 1976
+    fav: 3
+    tags: []
+    links:
+      deezer: 884025
+      wikipedia: https://en.wikipedia.org/wiki/Dancing_Queen
+      youtube: [xFrGuyw1V8s, qk_Vu6AcbWg]
+
   - title: The Day Before You Came 
     lang: [en]
     year: 1981
@@ -11,12 +21,12 @@ songs:
       wikipedia: https://en.wikipedia.org/wiki/The_Day_Before_You_Came
       youtube: [GroJ-OiV-EU, 1HnOFwqpLRQ]
 
-  - title: Dancing Queen
+  - title: When I Kissed the Teacher
     lang: [en]
     year: 1976
     fav: 3
     tags: []
     links:
-      deezer: 884025
-      wikipedia: https://en.wikipedia.org/wiki/Dancing_Queen
-      youtube: [xFrGuyw1V8s, qk_Vu6AcbWg]
+      deezer: 76376904
+      wikipedia: https://en.wikipedia.org/wiki/When_I_Kissed_the_Teacher
+      youtube: [wydPIAxuXdw, A9Bq4efyP1M]

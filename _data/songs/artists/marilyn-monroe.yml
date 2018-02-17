@@ -1,0 +1,13 @@
+artist: Marilyn Monroe
+wikipedia: https://en.wikipedia.org/wiki/Marilyn_Monroe
+songs:
+  - title: Diamonds Are a Girl's Best Friend
+    lang: [en]
+    year: 1953
+    fav: 4
+    tags: []
+    links:
+      deezer: 69576067
+      wikipedia: https://en.wikipedia.org/wiki/Diamonds_Are_a_Girl%27s_Best_Friend
+      youtube: [sQWqoWzc9cU, tbf_o5NF9vU]
+  
